@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic League Educational Material</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1"
+  }
+}
+</script>
+<style>
+    .pdf-render {
+        background: white !important;
+        color: black !important;
+        padding: 2rem !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .pdf-render h1, .pdf-render h2, .pdf-render h3, .pdf-render h4, .pdf-render p, .pdf-render li, .pdf-render strong {
+        color: black !important;
+    }
+    .pdf-render .text-gray-400 {
+        color: #555 !important;
+    }
+    .pdf-render .text-red-400 {
+        color: #333 !important;
+    }
+    .pdf-render .border-red-800 {
+        border-color: #ddd !important;
+    }
+    .pdf-render .text-green-400 {
+        color: #222 !important;
+    }
+
+    /* Book Loading Animation */
+    .book-spinner {
+        height: 80px;
+        width: 120px;
+        position: relative;
+        perspective: 1500px;
+    }
+
+    .book-cover-left {
+        background-color: #dc2626; /* from: red-600 */
+        width: 60px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 8px 0 0 8px;
+        transform-origin: right center;
+    }
+
+    .book-page-flipper {
+        background-color: #f3f4f6; /* from: gray-100 */
+        width: 60px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+        left: 60px;
+        border-radius: 0 8px 8px 0;
+        transform-origin: left center;
+        animation: page-flip 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes page-flip {
+        0% {
+            transform: rotateY(0deg);
+        }
+        50% {
+            transform: rotateY(-180deg);
+        }
+        100% {
+            transform: rotateY(-180deg);
+        }
+    }
+</style>
+</head>
+<body class="bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
